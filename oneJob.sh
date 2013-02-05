@@ -37,9 +37,9 @@ echo "===> VARS done"
 #####################################
 #### Install bin/lib
 #####################################
-cp  ${BASE_DIR}/local/bin/* ${LOCAL_SCRATCH}/
-cp  ${BASE_DIR}/scripts/scriptsBRDF/*.sh ${LOCAL_SCRATCH}/
-cp  ${BASE_DIR/Data/*.pbrt ${LOCAL_SCRATCH}/
+cp  $BASE_DIR/local/bin/* $LOCAL_SCRATCH/
+cp  $BASE_DIR/scripts/scriptsBRDF/*.sh $LOCAL_SCRATCH/
+cp  $BASE_DIR/Data/*.pbrt $LOCAL_SCRATCH/
 echo "===> COPY done"
 #####################################
 
@@ -89,7 +89,7 @@ echo "===> RUN done"
 #####################################
 #### GATHER
 #####################################
-mkdir  ${BASE_DIR}/Results/$name
-cp *brdf.txt ${BASE_DIR}/Results/$name/
+mkdir  $BASE_DIR/Results/$name
+cp *brdf.txt $BASE_DIR/Results/$name/
 echo "===> GATHER done"
 #####################################
