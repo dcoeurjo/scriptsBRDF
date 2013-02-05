@@ -14,7 +14,7 @@ zmodload zsh/mathfunc
 
 # Parametres pour gérer le multicoeurs (à enlever sinon)
 #$ -pe multicores 2
-#$ -q mc_meduim
+#$ -q mc_medium
 #$ -binding set linear:2
 
 # Classe du job
