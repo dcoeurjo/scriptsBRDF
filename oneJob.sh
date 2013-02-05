@@ -33,7 +33,7 @@ echo "Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) --
 #### Paths/vars
 #####################################
 LOCAL_SCRATCH=$TMPDIR # local scratch
-BASE_DIR="/sps/inter/liris/dcoeurjo/scripts/scriptsBRDF"
+BASE_DIR="/afs/in2p3.fr/home/d/dcoeurjo/"
 #####################################
 
 #####################################
