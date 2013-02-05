@@ -27,6 +27,7 @@ zmodload zsh/mathfunc
 #####################################
 LOCAL_SCRATCH=$TMPDIR # local scratch
 BASE_DIR="/afs/in2p3.fr/home/d/dcoeurjo/"
+echo "TMPDIR = $TMPDIR"
 echo "===> VARS done"
 #####################################
 
