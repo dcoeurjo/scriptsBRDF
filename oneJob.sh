@@ -27,6 +27,7 @@ zmodload zsh/mathfunc
 #####################################
 LOCAL_SCRATCH=$TMPDIR # local scratch
 BASE_DIR="/afs/in2p3.fr/home/d/dcoeurjo/"
+echo "===> VARS done"
 #####################################
 
 #####################################
@@ -54,11 +55,7 @@ typeset filename=$1
 typeset sx=$2
 typeset sy=$3
 typeset sz=$4
-
-#initial volume resolution
 typeset r=$5
-
-#shooting
 typeset lambda=$6
 typeset theta=$7
 typeset phi=$8
