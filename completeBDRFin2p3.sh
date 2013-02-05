@@ -14,8 +14,6 @@ typeset r=$5
 
 echo "PhotonPBRT file=" $file
 
-typeset PBRTPATH=$6
-
 for theta in {0..1}
 do
     for phi in {0..2}
@@ -23,7 +21,7 @@ do
         for lambda in {4..5}
 	do    
 	    echo "=== Job  Theta $theta / Phi $phi  / Lambda $lambda ==="
-	    qsub oneJob.sh  $file $sx $sy $sz $r $lambda $theta $phi $PBRTPATH
+	    qsub oneJob.sh  $file $sx $sy $sz $r $lambda $theta $phi
 	done
     done
 done

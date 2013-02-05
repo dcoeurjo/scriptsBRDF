@@ -69,7 +69,6 @@ typeset theta=$7
 typeset phi=$8
 
 #PWD
-typeset PBRTPATH=$9
 typeset name=$1:r
 
 ## Upadating file
@@ -85,8 +84,8 @@ echo "LightSource \"distant\" \"point from\" [$x $y $z] \"point to\" [0 0 0]" >>
 cat $filename | tail -n +12 >>  $name-$theta-$phi-Photon.pbrt
 
 ## Running
-oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name $PBRTPATH &
-oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name $PBRTPATH 
+oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name  &
+oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name  
 #####################################
 
 
