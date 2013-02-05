@@ -14,12 +14,12 @@ typeset r=$5
 
 echo "PhotonPBRT file=" $file
 
-mkdir  /afs/in2p3.fr/home/d/dcoeurjo/Results/$file:r
+mkdir /sps/inter/liris/dcoeurjo/Results/$file:r
 
 
 for theta in {0..0}
 do
-    for phi in {0..89}
+    for phi in {0..10}
     do
         for lambda in {4..7}
 	do    

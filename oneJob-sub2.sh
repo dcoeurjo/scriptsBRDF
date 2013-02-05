@@ -16,8 +16,8 @@ typeset name=$8
 
 echo "[sub2] Parameters: ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $name"
 
-./pbrt -p -w ${lambda}50 -x $sx -y $sy -z $sz -r $r -t $theta -phi $phi $name-$theta-$phi-Photon.pbrt >/dev/null
-./pbrt -p -w ${lambda}60 -x $sx -y $sy -z $sz -r $r -t $theta -phi $phi $name-$theta-$phi-Photon.pbrt >/dev/null
-./pbrt -p -w ${lambda}70 -x $sx -y $sy -z $sz -r $r -t $theta -phi $phi $name-$theta-$phi-Photon.pbrt >/dev/null
-./pbrt -p -w ${lambda}80 -x $sx -y $sy -z $sz -r $r -t $theta -phi $phi $name-$theta-$phi-Photon.pbrt >/dev/null
-./pbrt -p -w ${lambda}90 -x $sx -y $sy -z $sz -r $r -t $theta -phi $phi $name-$theta-$phi-Photon.pbrt >/dev/null
+./pbrt -p -w ${lambda}50 -x $sx -y $sy -z $sz -r $r -t $theta -phi $phi $name-$theta-$phi-Photon.pbrt --quiet
+./pbrt -p -w ${lambda}60 -x $sx -y $sy -z $sz -r $r -t $theta -phi $phi $name-$theta-$phi-Photon.pbrt --quiet
+./pbrt -p -w ${lambda}70 -x $sx -y $sy -z $sz -r $r -t $theta -phi $phi $name-$theta-$phi-Photon.pbrt --quiet
+./pbrt -p -w ${lambda}80 -x $sx -y $sy -z $sz -r $r -t $theta -phi $phi $name-$theta-$phi-Photon.pbrt --quiet
+./pbrt -p -w ${lambda}90 -x $sx -y $sy -z $sz -r $r -t $theta -phi $phi $name-$theta-$phi-Photon.pbrt --quiet

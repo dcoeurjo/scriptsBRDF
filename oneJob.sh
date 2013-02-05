@@ -1,6 +1,7 @@
 #!/usr/local/bin/zsh
 zmodload zsh/mathfunc     
 
+#####################################
 # Parametres generaux
 #$ -S "/usr/local/bin/zsh -l"
 #$ -P P_liris			# SPS liris
@@ -19,12 +20,15 @@ zmodload zsh/mathfunc
 
 # Classe du job
 #$-q medium
+#####################################
+
 
 
 #####################################
 #### Paths/vars
 #####################################
 LOCAL_SCRATCH=$TMPDIR # local scratch
+SPS_DIR="/sps/inter/liris/dcoeurjo/"
 BASE_DIR="/afs/in2p3.fr/home/d/dcoeurjo/"
 echo "TMPDIR = $TMPDIR"
 echo "BASEDIR = $BASE_DIR"
@@ -37,7 +41,7 @@ echo "===> VARS done"
 #####################################
 cp  $BASE_DIR/local/bin/* $LOCAL_SCRATCH/
 cp  $BASE_DIR/scripts/scriptsBRDF/*.sh $LOCAL_SCRATCH/
-cp  $BASE_DIR/Data/*.pbrt $LOCAL_SCRATCH/
+cp  $SPS_DIR/Data/*.pbrt $LOCAL_SCRATCH/
 echo "===> COPY done"
 #####################################
 
@@ -87,7 +91,7 @@ echo "===> RUN done"
 #####################################
 #### GATHER
 #####################################
-cp *brdf.txt $BASE_DIR/Results/$name/
-cp *stat.txt $BASE_DIR/Results/$name/
+cp *brdf.txt $SPS_DIR/Results/$name/
+cp *stat.txt $SPS_DIR/Results/$name/
 echo "===> GATHER done"
 #####################################
