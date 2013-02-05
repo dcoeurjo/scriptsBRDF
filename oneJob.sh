@@ -5,7 +5,6 @@ zmodload zsh/mathfunc
 #$ -S "/usr/local/bin/zsh -l"
 #$ -P P_liris			# SPS liris
 #$ -j y				# redirect stderr in stdout
-#	$ -m beas	        # mail at end
 #$ -m es			# mail at end
 #$ -M david.coeurjolly@liris.cnrs.fr
 #$ -l os='sl5'			# Linux
