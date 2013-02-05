@@ -1,4 +1,5 @@
 #!/bin/zsh
+zmodload zsh/mathfunc     
 
 #Temp var
 typeset x=0.0;
@@ -27,22 +28,22 @@ typeset phi=$8
 #PWD
 typeset PBRTPATH=$9
 
-echo "Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $PBRTPATH"
+typeset name=$1:r
 
-exit
+echo "Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $name  // $PBRTPATH"
 
 ## Upadating file
 (( t=theta*PI/180.0))
 (( p=phi*PI/180.0))
-echo "    Updating pbrt..."
+echo "Updating pbrt..."
 (( x= 50.0*cos(t)*sin(p) ))
 (( y= 50.0*sin(t)*sin(p) ))
 (( z= 50.0*cos(p) ))
 
-cat $filename  | head -n 10 >! temp_$theta-$phi-Photon.pbrt
-echo "LightSource \"distant\" \"point from\" [$x $y $z] \"point to\" [0 0 0]" >>  temp_$theta2-$phi2-Photon.pbrt
-cat $filename | tail -n +12 >>  temp_$theta-$phi-Photon.pbrt
+cat $filename  | head -n 10 >! $name-$theta-$phi-Photon.pbrt
+echo "LightSource \"distant\" \"point from\" [$x $y $z] \"point to\" [0 0 0]" >>  $name-$theta-$phi-Photon.pbrt
+cat $filename | tail -n +12 >>  $name-$theta-$phi-Photon.pbrt
 
 ## Running
-oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $PBRTPATH &
-oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $PBRTPATH 
+oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name $PBRTPATH &
+oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name $PBRTPATH 
