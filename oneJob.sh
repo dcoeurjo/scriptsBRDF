@@ -18,7 +18,7 @@ zmodload zsh/mathfunc
 #$ -binding set linear:2
 
 # Classe du job
-#$-q long
+#$-q medium
 # $-q verylong
 
 
@@ -27,7 +27,6 @@ zmodload zsh/mathfunc
 #####################################
 echo "Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $name  // $PBRTPATH"
 #####################################
-
 
 #####################################
 #### Paths/vars
