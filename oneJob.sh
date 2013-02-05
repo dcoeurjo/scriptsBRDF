@@ -27,7 +27,7 @@ typeset phi=$8
 #PWD
 typeset PBRTPATH=$9
 
-echo "Parameters: $filename -- ( $x $y $z )-- $r -- $lambda  ($theta,$phi) ---- $PBRTPATH"
+echo "Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $PBRTPATH"
 
 exit
 
