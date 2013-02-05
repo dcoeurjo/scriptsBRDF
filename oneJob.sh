@@ -22,7 +22,30 @@ zmodload zsh/mathfunc
 # $-q verylong
 
 
+#####################################
+##### Trace
+#####################################
+echo "Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $name  // $PBRTPATH"
+#####################################
 
+
+#####################################
+#### Paths/vars
+#####################################
+LOCAL_SCRATCH=$TMPDIR # local scratch
+BASE_DIR="/sps/inter/liris/dcoeurjo/scripts/scriptsBRDF"
+#####################################
+
+#####################################
+#### Install bin/lib
+#####################################
+cp -R ${BASE_DIR}/local/bin ${LOCAL_SCRATCH}
+cp -R ${BASE_DIR/Data ${LOCAL_SCRATCH}
+#####################################
+
+#####################################
+#### RUN
+#####################################
 #Temp var
 typeset x=0.0;
 typeset y=0.0;
@@ -30,9 +53,7 @@ typeset z=0.0;
 typeset t=0.0;
 typeset p=0.0;
 typeset PI=3.14159265
-
 typeset  filename=$1
-
 
 #initial volume size
 typeset sx=$2
@@ -49,11 +70,7 @@ typeset phi=$8
 
 #PWD
 typeset PBRTPATH=$9
-
 typeset name=$1:r
-
-
-echo "Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $name  // $PBRTPATH"
 
 ## Upadating file
 (( t=theta*PI/180.0))
@@ -70,3 +87,12 @@ cat $filename | tail -n +12 >>  $name-$theta-$phi-Photon.pbrt
 ## Running
 oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name $PBRTPATH &
 oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name $PBRTPATH 
+#####################################
+
+
+#####################################
+#### GATHER
+#####################################
+mkdir  ${BASE_DIR}/Results/$name
+cp *brdf.txt ${BASE_DIR}/Results/$name/
+#####################################
