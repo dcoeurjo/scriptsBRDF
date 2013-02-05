@@ -14,11 +14,11 @@ typeset r=$5
 
 echo "PhotonPBRT file=" $file
 
-for theta in {0..1}
+for theta in {0..0}
 do
-    for phi in {0..2}
+    for phi in {0..0}
     do
-        for lambda in {4..5}
+        for lambda in {4..4}
 	do    
 	    echo "=== Job  Theta $theta / Phi $phi  / Lambda $lambda ==="
 	    qsub oneJob.sh  $file $sx $sy $sz $r $lambda $theta $phi
