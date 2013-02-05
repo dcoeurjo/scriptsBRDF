@@ -12,7 +12,7 @@ typeset r=$4
 typeset lambda=$5
 typeset theta=$6
 typeset phi=$7
-typset  PBRTPATH=$9
+typeset PBRTPATH=$9
 
 
 

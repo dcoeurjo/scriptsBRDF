@@ -7,7 +7,7 @@ typeset z=0.0;
 typeset t=0.0;
 typeset p=0.0;
 
-typset  filename=$1
+typeset  filename=$1
 
 
 #initial volume size
@@ -26,7 +26,9 @@ typeset phi=$8
 #PWD
 typeset PBRTPATH=$9
 
-echo "Parameters: $x $y $z -- $r -- $lamba $theta $phi $filename"
+echo "Parameters: $filename -- ( $x $y $z )-- $r -- $lambda  ($theta,$phi) ---- $PBRTPATH"
+
+exit
 
 ## Upadating file
 (( t=theta*PI/180.0))
@@ -35,6 +37,7 @@ echo "    Updating pbrt..."
 (( x= 50.0*cos(t)*sin(p) ))
 (( y= 50.0*sin(t)*sin(p) ))
 (( z= 50.0*cos(p) ))
+
 cat $filename  | head -n 10 >! temp_$theta-$phi-Photon.pbrt
 echo "LightSource \"distant\" \"point from\" [$x $y $z] \"point to\" [0 0 0]" >>  temp_$theta2-$phi2-Photon.pbrt
 cat $filename | tail -n +12 >>  temp_$theta-$phi-Photon.pbrt
