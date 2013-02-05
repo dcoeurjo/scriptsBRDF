@@ -6,6 +6,7 @@ typeset y=0.0;
 typeset z=0.0;
 typeset t=0.0;
 typeset p=0.0;
+typeset PI=3.14159265
 
 typeset  filename=$1
 

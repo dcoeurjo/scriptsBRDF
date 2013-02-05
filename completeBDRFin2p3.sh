@@ -12,36 +12,21 @@ typeset sz=$4
 #initial volume resolution
 typeset r=$5
 
+echo "PhotonPBRT file=" $file
 
-echo "OFF file=" $file
-typeset PI=3.14159265
-integer ii=0
-typeset x=0.0;
-typeset y=0.0;
-typeset z=0.0;
-typeset t=0.0;
-typeset p=0.0;
-typeset theta2=0.0;
-typeset phi2=0.0;
+typeset PBRTPATH="local/bin/"
 
-(( ii= i*10 ))
-cd /home/davidcoeurjolly/Sources/digitalSnow/radiativeTransfer/tools/build/Data
-mkdir $1:r
-cd $1:r
-echo $PWD
-
-
-for theta in {0..359}
+for theta in {0..1}
 do
     echo "=========== Theta $theta ==========="
-    for phi in {0..80}
+    for phi in {0..2}
     do
 	echo "=========== Phi $phi ==========="
         for lambda in {4..6}
 	do
 	    echo "=========== Lambda $lambda ==========="
 	    
-	    
+	    oneJob.sh  $file $sx $sy $sz $r $lambda $theta $phi $PBRTPATH
 	done
     done
 done
