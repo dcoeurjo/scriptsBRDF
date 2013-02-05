@@ -32,8 +32,9 @@ BASE_DIR="/afs/in2p3.fr/home/d/dcoeurjo/"
 #####################################
 #### Install bin/lib
 #####################################
-cp -R ${BASE_DIR}/local/bin ${LOCAL_SCRATCH}
-cp -R ${BASE_DIR/Data ${LOCAL_SCRATCH}
+cp  ${BASE_DIR}/local/bin/* ${LOCAL_SCRATCH}
+cp  ${BASE_DIR}/scripts/scriptsBRDF/*.sh ${LOCAL_SCRATCH}
+cp  ${BASE_DIR/Data/*.pbrt ${LOCAL_SCRATCH}
 echo "===> COPY done"
 #####################################
 
@@ -47,7 +48,7 @@ typeset z=0.0;
 typeset t=0.0;
 typeset p=0.0;
 typeset PI=3.14159265
-typeset  filename=$1
+typeset filename=$1
 
 #initial volume size
 typeset sx=$2
@@ -78,8 +79,8 @@ echo "LightSource \"distant\" \"point from\" [$x $y $z] \"point to\" [0 0 0]" >>
 cat $filename | tail -n +12 >>  $name-$theta-$phi-Photon.pbrt
 
 ## Running
-oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name  &
-oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name  
+./oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name &
+./oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name  
 echo "===> RUN done"
 #####################################
 
