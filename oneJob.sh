@@ -23,12 +23,6 @@ zmodload zsh/mathfunc
 
 
 #####################################
-##### Trace
-#####################################
-echo "===> Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $name  // $PBRTPATH"
-#####################################
-
-#####################################
 #### Paths/vars
 #####################################
 LOCAL_SCRATCH=$TMPDIR # local scratch
@@ -70,15 +64,15 @@ typeset phi=$8
 
 #PWD
 typeset name=$1:r
+echo "===> Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $name"
 
-## Upadating file
-(( t=theta*PI/180.0))
-(( p=phi*PI/180.0))
-echo "Updating pbrt..."
-(( x= 50.0*cos(t)*sin(p) ))
-(( y= 50.0*sin(t)*sin(p) ))
-(( z= 50.0*cos(p) ))
-
+## Updating file
+(( t=theta*PI/180.0 ))
+(( p=phi*PI/180.0 ))
+(( x= 50.0*cos( t )*sin( p ) ))
+(( y= 50.0*sin( t )*sin( p ) ))
+(( z= 50.0*cos( p ) ))
+	    
 cat $filename  | head -n 10 >! $name-$theta-$phi-Photon.pbrt
 echo "LightSource \"distant\" \"point from\" [$x $y $z] \"point to\" [0 0 0]" >>  $name-$theta-$phi-Photon.pbrt
 cat $filename | tail -n +12 >>  $name-$theta-$phi-Photon.pbrt
