@@ -1,5 +1,27 @@
-#!/bin/zsh
+#!/usr/local/bin/zsh
 zmodload zsh/mathfunc     
+
+# Parametres generaux
+#$ -P P_liris			# SPS liris
+#$ -j y				# redirect stderr in stdout
+#	$ -m beas	        # mail at end
+# $ -m eas			# mail at end
+#$ -M david.coeurjolly@liris.cnrs.fr
+#$ -l os='sl5'			# Linux
+#$ -N I01isonew			# Job name
+#$ -V				# export env
+#$ -l sps=1
+
+# Parametres pour gérer le multicoeurs (à enlever sinon)
+#$ -pe multicores 2
+#$ -q mc_meduim
+#$ -binding set linear:2
+
+# Classe du job
+#$-q long
+# $-q verylong
+
+
 
 #Temp var
 typeset x=0.0;

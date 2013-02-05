@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/local/bin/zsh
 zmodload zsh/mathfunc     
 
 # NOFF filename
@@ -18,15 +18,12 @@ typeset PBRTPATH=$6
 
 for theta in {0..1}
 do
-    echo "=========== Theta $theta ==========="
     for phi in {0..2}
     do
-	echo "=========== Phi $phi ==========="
         for lambda in {4..5}
-	do
-	    echo "=========== Lambda $lambda ==========="
-	    
-	    oneJob.sh  $file $sx $sy $sz $r $lambda $theta $phi $PBRTPATH
+	do    
+	    echo "=== Job  Theta $theta / Phi $phi  / Lambda $lambda ==="
+	    qsub oneJob.sh  $file $sx $sy $sz $r $lambda $theta $phi $PBRTPATH
 	done
     done
 done
