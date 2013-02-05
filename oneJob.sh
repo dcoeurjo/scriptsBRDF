@@ -25,7 +25,7 @@ zmodload zsh/mathfunc
 #####################################
 ##### Trace
 #####################################
-echo "Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $name  // $PBRTPATH"
+echo "===> Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $name  // $PBRTPATH"
 #####################################
 
 #####################################
@@ -40,6 +40,7 @@ BASE_DIR="/afs/in2p3.fr/home/d/dcoeurjo/"
 #####################################
 cp -R ${BASE_DIR}/local/bin ${LOCAL_SCRATCH}
 cp -R ${BASE_DIR/Data ${LOCAL_SCRATCH}
+echo "===> COPY done"
 #####################################
 
 #####################################
@@ -85,6 +86,7 @@ cat $filename | tail -n +12 >>  $name-$theta-$phi-Photon.pbrt
 ## Running
 oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name  &
 oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name  
+echo "===> RUN done"
 #####################################
 
 
@@ -93,4 +95,5 @@ oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name
 #####################################
 mkdir  ${BASE_DIR}/Results/$name
 cp *brdf.txt ${BASE_DIR}/Results/$name/
+echo "===> GATHER done"
 #####################################
