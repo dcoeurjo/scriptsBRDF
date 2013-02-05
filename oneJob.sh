@@ -30,6 +30,7 @@ typeset PBRTPATH=$9
 
 typeset name=$1:r
 
+
 echo "Parameters: $filename -- ( $sx $sy $sz )-- $r -- $lambda  ($theta,$phi) ---- $name  // $PBRTPATH"
 
 ## Upadating file

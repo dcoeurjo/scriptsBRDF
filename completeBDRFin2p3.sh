@@ -14,7 +14,7 @@ typeset r=$5
 
 echo "PhotonPBRT file=" $file
 
-typeset PBRTPATH="local/bin/"
+typeset PBRTPATH=$6
 
 for theta in {0..1}
 do
@@ -22,7 +22,7 @@ do
     for phi in {0..2}
     do
 	echo "=========== Phi $phi ==========="
-        for lambda in {4..6}
+        for lambda in {4..5}
 	do
 	    echo "=========== Lambda $lambda ==========="
 	    
