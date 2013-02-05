@@ -6,7 +6,7 @@ zmodload zsh/mathfunc
 #$ -P P_liris			# SPS liris
 #$ -j y				# redirect stderr in stdout
 #	$ -m beas	        # mail at end
-# $ -m eas			# mail at end
+#$ -m eas			# mail at end
 #$ -M david.coeurjolly@liris.cnrs.fr
 #$ -l os='sl5'			# Linux
 #$ -N I01isonew			# Job name
@@ -20,7 +20,6 @@ zmodload zsh/mathfunc
 
 # Classe du job
 #$-q medium
-# $-q verylong
 
 
 #####################################
@@ -29,8 +28,8 @@ zmodload zsh/mathfunc
 LOCAL_SCRATCH=$TMPDIR # local scratch
 BASE_DIR="/afs/in2p3.fr/home/d/dcoeurjo/"
 echo "TMPDIR = $TMPDIR"
-echo "BASEDIR = ${BASE_DIR}"
-echo "LOCAL = ${LOCAL_SCRATCH}"
+echo "BASEDIR = $BASE_DIR"
+echo "LOCAL = $LOCAL_SCRATCH"
 echo "===> VARS done"
 #####################################
 
@@ -80,9 +79,8 @@ echo "LightSource \"distant\" \"point from\" [$x $y $z] \"point to\" [0 0 0]" >>
 cat $filename | tail -n +12 >>  $name-$theta-$phi-Photon.pbrt
 
 ## Running
-./oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name
-# &
-#./oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name  
+./oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name &
+./oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name  
 echo "===> RUN done"
 #####################################
 
