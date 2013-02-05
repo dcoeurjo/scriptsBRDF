@@ -2,6 +2,7 @@
 zmodload zsh/mathfunc     
 
 # Parametres generaux
+#$ -S "/usr/local/bin/zsh -l"
 #$ -P P_liris			# SPS liris
 #$ -j y				# redirect stderr in stdout
 #	$ -m beas	        # mail at end
@@ -28,15 +29,17 @@ zmodload zsh/mathfunc
 LOCAL_SCRATCH=$TMPDIR # local scratch
 BASE_DIR="/afs/in2p3.fr/home/d/dcoeurjo/"
 echo "TMPDIR = $TMPDIR"
+echo "BASEDIR = ${BASE_DIR}"
+echo "LOCAL = ${LOCAL_SCRATCH}"
 echo "===> VARS done"
 #####################################
 
 #####################################
 #### Install bin/lib
 #####################################
-cp  ${BASE_DIR}/local/bin/* ${LOCAL_SCRATCH}
-cp  ${BASE_DIR}/scripts/scriptsBRDF/*.sh ${LOCAL_SCRATCH}
-cp  ${BASE_DIR/Data/*.pbrt ${LOCAL_SCRATCH}
+cp  ${BASE_DIR}/local/bin/* ${LOCAL_SCRATCH}/
+cp  ${BASE_DIR}/scripts/scriptsBRDF/*.sh ${LOCAL_SCRATCH}/
+cp  ${BASE_DIR/Data/*.pbrt ${LOCAL_SCRATCH}/
 echo "===> COPY done"
 #####################################
 
