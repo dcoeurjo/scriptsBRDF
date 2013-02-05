@@ -88,7 +88,7 @@ echo "===> RUN done"
 #####################################
 #### GATHER
 #####################################
-mkdir  $BASE_DIR/Results/$name
 cp *brdf.txt $BASE_DIR/Results/$name/
+cp *stat.txt $BASE_DIR/Results/$name/
 echo "===> GATHER done"
 #####################################

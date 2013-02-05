@@ -14,6 +14,9 @@ typeset r=$5
 
 echo "PhotonPBRT file=" $file
 
+mkdir  /afs/in2p3.fr/home/d/dcoeurjo/Results/$file:r
+
+
 for theta in {0..0}
 do
     for phi in {0..89}
