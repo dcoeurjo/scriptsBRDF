@@ -9,7 +9,7 @@ zmodload zsh/mathfunc
 #$ -m es			# mail at end
 #$ -M david.coeurjolly@liris.cnrs.fr
 #$ -l os='sl5'			# Linux
-#$ -N I01isonew			# Job name
+#$ -N I01isonew-$6-$7-$8			# Job name
 #$ -V				# export env
 #$ -l sps=1
 

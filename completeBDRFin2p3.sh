@@ -19,7 +19,7 @@ mkdir /sps/inter/liris/dcoeurjo/Results/$file:r
 
 for theta in {0..0}
 do
-    for phi in {0..10}
+    for phi in {0..89}
     do
         for lambda in {4..7}
 	do    
