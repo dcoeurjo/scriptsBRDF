@@ -82,7 +82,7 @@ echo "LightSource \"distant\" \"point from\" [$x $y $z] \"point to\" [0 0 0]" >>
 cat $filename | tail -n +12 >>  $name-$theta-$phi-Photon.pbrt
 
 ## Running
-./oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name &
+./oneJob-sub1.sh $sx $sy $sz $r $lambda $theta $phi $name
 ./oneJob-sub2.sh $sx $sy $sz $r $lambda $theta $phi $name  
 echo "===> RUN done"
 #####################################
