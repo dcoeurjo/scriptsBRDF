@@ -9,14 +9,14 @@ zmodload zsh/mathfunc
 #$ -m es			# mail at end
 #$ -M david.coeurjolly@liris.cnrs.fr
 #$ -l os='sl5'			# Linux
-#$ -N I01isonew-$6-$7-$8			# Job name
+#$ -N I01isonew			# Job name
 #$ -V				# export env
 #$ -l sps=1
 
 # Parametres pour gérer le multicoeurs (à enlever sinon)
-#$ -pe multicores 2
-#$ -q mc_medium
-#$ -binding set linear:2
+#   $ -pe multicores 2
+#$ -q medium
+#   $ -binding set linear:2
 
 # Classe du job
 #$-q medium
